@@ -114,9 +114,6 @@ def align(seq1, seq2, strategy, substitution_matrix, gap_penalty):
             row.append(0)
     
     if strategy == 'global':
-        #####################
-        # START CODING HERE #
-        #####################
         # for global alignment the first row and column are initialized with the sum of the gap penalty
         for i in range(1, N):
             score_matrix[0][i] = score_matrix[0][i-1] - gap_penalty
@@ -128,9 +125,6 @@ def align(seq1, seq2, strategy, substitution_matrix, gap_penalty):
 
     ### 2: Fill in Score Matrix
  
-    #####################
-    # START CODING HERE #
-    #####################
 
     def dp_function(diagonal, top, left, aa1, aa2):
         """
@@ -177,15 +171,9 @@ def align(seq1, seq2, strategy, substitution_matrix, gap_penalty):
         # append the steps of each row to the list
         trace_list.append(row_trace)
             
-    #####################
-    #  END CODING HERE  #
-    #####################
 
     ### 3: Traceback
     
-    #####################
-    # START CODING HERE #
-    #####################
     aligned_seq1 = ''  # These are dummy values! Change the code so that
     aligned_seq2 = ''  # aligned_seq1 and _seq2 contain the input sequences
     # with gaps inserted at the appropriate positions.
@@ -295,9 +283,6 @@ def align(seq1, seq2, strategy, substitution_matrix, gap_penalty):
     # reverse the alignments
     aligned_seq1 = aligned_seq1[::-1]
     aligned_seq2 = aligned_seq2[::-1]
-    #####################
-    #  END CODING HERE  #
-    #####################
 
     alignment = (aligned_seq1, aligned_seq2, align_score)
     return (alignment, score_matrix)
